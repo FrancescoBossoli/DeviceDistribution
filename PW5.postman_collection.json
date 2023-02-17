@@ -1,0 +1,666 @@
+{
+	"info": {
+		"_postman_id": "c6c8eae7-b0f9-4829-941f-581538b8eb55",
+		"name": "PW5",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "25827548"
+	},
+	"item": [
+		{
+			"name": "Registrazione",
+			"request": {
+				"auth": {
+					"type": "apikey",
+					"apikey": [
+						{
+							"key": "value",
+							"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJKYWNrIiwiaWF0IjoxNjc2NjQzNzM4LCJleHAiOjE2NzY3MzAxMzh9.28mT36VEScaxjTuaX0LSWYj1y4fH1nWy_16Sub2S02IAxTEPK5PvDujZM8FRRZeESNOgfSudGiVur3dITl47LQ",
+							"type": "string"
+						},
+						{
+							"key": "key",
+							"value": "Authorization",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJNYXJpdXMiLCJpYXQiOjE2NzY2Mzk2ODIsImV4cCI6MTY3NjcyNjA4Mn0.fwSjJxctsh8lkd8u7vcWPQ3GilRrzWeOwA4sAR-b0vnC7yEQKrK_6CHHQ-KqFAGuG21JOrchEB13aoGAwd6b-g",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\" : \"Furio\",\r\n    \"email\" : \"sadfsaddf@gmail.com\",\r\n    \"password\" : \"furio123\",\r\n    \"name\" : \"sdfsdf\",\r\n    \"surname\" : \"sdfsdf\",\r\n    \"roles\" : [\"Employee\", \"Assistant\", \"Administrator\"]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:9090/api/auth/signup",
+					"host": [
+						"localhost"
+					],
+					"port": "9090",
+					"path": [
+						"api",
+						"auth",
+						"signup"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Login User",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\" : \"Yoko\",\r\n    \"password\" : \"katy123\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:9090/api/auth/login",
+					"host": [
+						"localhost"
+					],
+					"port": "9090",
+					"path": [
+						"api",
+						"auth",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Login Admin",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\" : \"Marius\",\r\n    \"password\" : \"mario123\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:9090/api/auth/login",
+					"host": [
+						"localhost"
+					],
+					"port": "9090",
+					"path": [
+						"api",
+						"auth",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get senza token",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:9090/api/users",
+					"host": [
+						"localhost"
+					],
+					"port": "9090",
+					"path": [
+						"api",
+						"users"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get con token",
+			"request": {
+				"auth": {
+					"type": "apikey",
+					"apikey": [
+						{
+							"key": "value",
+							"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJZb2tvIiwiaWF0IjoxNjc2NjcyNTk1LCJleHAiOjE2NzY3NTg5OTV9.EWQWgLPjj564uzt5o1MG2YnXG18Biz78UKQTihyGOcWB2ZkYOghPs6XXtSBpFnkHT8_H7j92oirwaJ2hIqh1Zw",
+							"type": "string"
+						},
+						{
+							"key": "key",
+							"value": "Authorization",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:9090/api/users/1",
+					"host": [
+						"localhost"
+					],
+					"port": "9090",
+					"path": [
+						"api",
+						"users",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get con token paginata",
+			"request": {
+				"auth": {
+					"type": "apikey",
+					"apikey": [
+						{
+							"key": "value",
+							"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJZb2tvIiwiaWF0IjoxNjc2NjcyNTk1LCJleHAiOjE2NzY3NTg5OTV9.EWQWgLPjj564uzt5o1MG2YnXG18Biz78UKQTihyGOcWB2ZkYOghPs6XXtSBpFnkHT8_H7j92oirwaJ2hIqh1Zw",
+							"type": "string"
+						},
+						{
+							"key": "key",
+							"value": "Authorization",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:9090/api/users?page=1&size=4",
+					"host": [
+						"localhost"
+					],
+					"port": "9090",
+					"path": [
+						"api",
+						"users"
+					],
+					"query": [
+						{
+							"key": "page",
+							"value": "1"
+						},
+						{
+							"key": "size",
+							"value": "4"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Post con token User",
+			"request": {
+				"auth": {
+					"type": "apikey",
+					"apikey": [
+						{
+							"key": "value",
+							"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJZb2tvIiwiaWF0IjoxNjc2NjcyNTk1LCJleHAiOjE2NzY3NTg5OTV9.EWQWgLPjj564uzt5o1MG2YnXG18Biz78UKQTihyGOcWB2ZkYOghPs6XXtSBpFnkHT8_H7j92oirwaJ2hIqh1Zw",
+							"type": "string"
+						},
+						{
+							"key": "key",
+							"value": "Authorization",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\" : \"Jackgdfgfd0\",\r\n    \"email\" : \"jackfrosdfgdft0@gmail.com\",\r\n    \"password\" : \"jack123\",\r\n    \"name\" : \"Jackie\",\r\n    \"surname\" : \"Chan\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:9090/api/users",
+					"host": [
+						"localhost"
+					],
+					"port": "9090",
+					"path": [
+						"api",
+						"users"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Post con token Admin",
+			"request": {
+				"auth": {
+					"type": "apikey",
+					"apikey": [
+						{
+							"key": "value",
+							"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJNYXJpdXMiLCJpYXQiOjE2NzY2NDkyNDcsImV4cCI6MTY3NjczNTY0N30.Vz6MYHobGjzVVCwYNv4c3aO6p9OMB-1ooba5CLQw_WeGExgKh_hGTKtfoNR33d8h4Y9xvL1SRkZIAF4qvAR01A",
+							"type": "string"
+						},
+						{
+							"key": "key",
+							"value": "Authorization",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJNYXJpdXMiLCJpYXQiOjE2NzY2NDg4MjEsImV4cCI6MTY3NjczNTIyMX0.djiCNgJhv69sxV7gHjhSo7MmRNm1hzeKu2bQSLHHUZZW0wFnN-Z-KP1su39xm4dXQuoNHnNRpIIoX2V-isjS9A",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\" : \"Jack40\",\r\n    \"email\" : \"jackfrost04@gmail.com\",\r\n    \"password\" : \"jack123\",\r\n    \"name\" : \"Jackie\",\r\n    \"surname\" : \"Chan\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:9090/api/users",
+					"host": [
+						"localhost"
+					],
+					"port": "9090",
+					"path": [
+						"api",
+						"users"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Post con token Admin e + Roles",
+			"request": {
+				"auth": {
+					"type": "apikey",
+					"apikey": [
+						{
+							"key": "value",
+							"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJGdXJpbyIsImlhdCI6MTY3NjY2MzM4OSwiZXhwIjoxNjc2NzQ5Nzg5fQ._tfiOl0qL6akiYXQtZKMiyImrCKRDCVMg6gV3v-LeATTiBNTR9PlgbqROK1G5pfa9gvleDUoLfOYhwjLw8PUAQ",
+							"type": "string"
+						},
+						{
+							"key": "key",
+							"value": "Authorization",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJNYXJpdXMiLCJpYXQiOjE2NzY2NDg4MjEsImV4cCI6MTY3NjczNTIyMX0.djiCNgJhv69sxV7gHjhSo7MmRNm1hzeKu2bQSLHHUZZW0wFnN-Z-KP1su39xm4dXQuoNHnNRpIIoX2V-isjS9A",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\" : \"Jack40\",\r\n    \"email\" : \"jackfrost04@gmail.com\",\r\n    \"password\" : \"jack123\",\r\n    \"name\" : \"Jackie\",\r\n    \"surname\" : \"Chan\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:9090/api/users",
+					"host": [
+						"localhost"
+					],
+					"port": "9090",
+					"path": [
+						"api",
+						"users"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Associazione Device - User",
+			"request": {
+				"auth": {
+					"type": "apikey",
+					"apikey": [
+						{
+							"key": "value",
+							"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJNYXJpdXMiLCJpYXQiOjE2NzY2NDkyNDcsImV4cCI6MTY3NjczNTY0N30.Vz6MYHobGjzVVCwYNv4c3aO6p9OMB-1ooba5CLQw_WeGExgKh_hGTKtfoNR33d8h4Y9xvL1SRkZIAF4qvAR01A",
+							"type": "string"
+						},
+						{
+							"key": "key",
+							"value": "Authorization",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJNYXJpdXMiLCJpYXQiOjE2NzY2NDg4MjEsImV4cCI6MTY3NjczNTIyMX0.djiCNgJhv69sxV7gHjhSo7MmRNm1hzeKu2bQSLHHUZZW0wFnN-Z-KP1su39xm4dXQuoNHnNRpIIoX2V-isjS9A",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\" : \"Jack40\",\r\n    \"email\" : \"jackfrost04@gmail.com\",\r\n    \"password\" : \"jack123\",\r\n    \"name\" : \"Jackie\",\r\n    \"surname\" : \"Chan\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:9090/api/users",
+					"host": [
+						"localhost"
+					],
+					"port": "9090",
+					"path": [
+						"api",
+						"users"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Put con token User",
+			"request": {
+				"auth": {
+					"type": "apikey",
+					"apikey": [
+						{
+							"key": "value",
+							"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJKYWNrIiwiaWF0IjoxNjc2NjQ5MTgxLCJleHAiOjE2NzY3MzU1ODF9.m_LZl-E1VlObQ6yyjBy9wXUkLvPdwPSaHPpHCpQd4P_24GyjgQPoqr67aib3m_AA-jF6aTBrJE1Ibp3OJaJqsQ",
+							"type": "string"
+						},
+						{
+							"key": "key",
+							"value": "Authorization",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\" : \"Jackill\",\r\n    \"email\" : \"jackfrost2@gmail.com\",\r\n    \"password\" : \"jack123\",\r\n    \"name\" : \"Jackie\",\r\n    \"surname\" : \"Chan\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:9090/api/users/12",
+					"host": [
+						"localhost"
+					],
+					"port": "9090",
+					"path": [
+						"api",
+						"users",
+						"12"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Put con token Admin",
+			"request": {
+				"auth": {
+					"type": "apikey",
+					"apikey": [
+						{
+							"key": "value",
+							"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJNYXJpdXMiLCJpYXQiOjE2NzY2NzMyNTMsImV4cCI6MTY3Njc1OTY1M30.OiCfb-QK-nQBrj9qp_y71pkLat2DFnFImANmdGFfo8Kr_iYyee3FnG5nR4ziB44Z4PMzOOCFQJotbqGJVKm84g",
+							"type": "string"
+						},
+						{
+							"key": "key",
+							"value": "Authorization",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\" : \"Jeeg\",\r\n    \"email\" : \"giorgio@gmail.com\",\r\n    \"password\" : \"jeeg123\",\r\n    \"name\" : \"Mario\",\r\n    \"surname\" : \"Rozzi\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:9090/api/users/8",
+					"host": [
+						"localhost"
+					],
+					"port": "9090",
+					"path": [
+						"api",
+						"users",
+						"8"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Put con token + associazione",
+			"request": {
+				"auth": {
+					"type": "apikey",
+					"apikey": [
+						{
+							"key": "value",
+							"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJNYXJpdXMiLCJpYXQiOjE2NzY2NTY0MjMsImV4cCI6MTY3Njc0MjgyM30.Z1u13MxvVt9AGuUDv2YvzLPb-84nsJLg8gl2PdP0SdY5agbVdDVD2dVpBkrbUshAViNoidikFKnkNAeUDyprcA",
+							"type": "string"
+						},
+						{
+							"key": "key",
+							"value": "Authorization",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Samsung S5Plus\",\r\n    \"status\": \"Taken\",\r\n    \"user\" : {\"id\" : 2}\r\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:9090/api/tablets/6",
+					"host": [
+						"localhost"
+					],
+					"port": "9090",
+					"path": [
+						"api",
+						"tablets",
+						"6"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete con token User",
+			"request": {
+				"auth": {
+					"type": "apikey",
+					"apikey": [
+						{
+							"key": "value",
+							"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJKYWNrIiwiaWF0IjoxNjc2NjUzNzI1LCJleHAiOjE2NzY3NDAxMjV9.pbDdEQNNtw2pqVE_5KwuReCtUgHsvpcmy3ngxTTdSPPJUnmCEJb3TWSwCxJBtMdCSaG0HP7rie7xAYD4QDWMqA",
+							"type": "string"
+						},
+						{
+							"key": "key",
+							"value": "Authorization",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "localhost:9090/api/users/8",
+					"host": [
+						"localhost"
+					],
+					"port": "9090",
+					"path": [
+						"api",
+						"users",
+						"8"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete con token Admin",
+			"request": {
+				"auth": {
+					"type": "apikey",
+					"apikey": [
+						{
+							"key": "value",
+							"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJNYXJpdXMiLCJpYXQiOjE2NzY2NzMyNTMsImV4cCI6MTY3Njc1OTY1M30.OiCfb-QK-nQBrj9qp_y71pkLat2DFnFImANmdGFfo8Kr_iYyee3FnG5nR4ziB44Z4PMzOOCFQJotbqGJVKm84g",
+							"type": "string"
+						},
+						{
+							"key": "key",
+							"value": "Authorization",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "localhost:9090/api/users/7",
+					"host": [
+						"localhost"
+					],
+					"port": "9090",
+					"path": [
+						"api",
+						"users",
+						"7"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete con token su Device",
+			"request": {
+				"auth": {
+					"type": "apikey",
+					"apikey": [
+						{
+							"key": "value",
+							"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJNYXJpdXMiLCJpYXQiOjE2NzY2NjA1OTAsImV4cCI6MTY3Njc0Njk5MH0.6haHlOtgcP7wmwlD5V2UDxba0IouAV_X464KnYfcol8KZX25FPFmK5GMfEODXxP61bDj9-HTAflC1ofQvjzdow",
+							"type": "string"
+						},
+						{
+							"key": "key",
+							"value": "Authorization",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Samsung S5Pluf\",\r\n    \"status\": \"Available\",\r\n    \"user\" : {\"id\" : 2}\r\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:9090/api/devices/8",
+					"host": [
+						"localhost"
+					],
+					"port": "9090",
+					"path": [
+						"api",
+						"devices",
+						"8"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
